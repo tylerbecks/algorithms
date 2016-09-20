@@ -42,19 +42,14 @@ class BinarySearchTree {
 
   find(val) {
     let x = this.root;
-    if (x === null) {
-      return null;
-    } else {
-      while (x.val !== null) {
-        if (val === x.val) {
-          return x;
-        } else if (val < x.val) {
-          x = x.left;
-        } else {
-          x = x.right;
-        }
+    while (true) {
+      if (x.val === val || x === null) {
+        return x;
+      } else if (val < x.val) {
+        x = x.left;
+      } else {
+        x = x.right;
       }
-      return null;
     }
   }
 
